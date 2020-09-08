@@ -2,16 +2,19 @@ print('****************************************************')
 print('******************欢迎来到英雄无敌*********************')
 print('****************************************************')
 
-xuezhi=100
-gongjili=10
-fangyuli=50
 
 map=[['#','#','#'],['#','#','#'],['#','#','#']]
 
 x = 0
 y = 0
 
-name=input('大佬，给你的游戏起个响亮的游戏ID：')
+
+def add_user():
+name=input('请设置游戏ID：')
+password=input('请设置游戏密码：')
+
+
+
 if not name:
     name='玩家一'
 print('游戏id设置成功')
@@ -22,7 +25,7 @@ for i in user_info:
     print(i,":",user_info[i])
 
 print('开始游戏')
-print('游戏向右请按d,向左按a,向上按w,向下按s,退出输入quit')
+print('游戏规则：向右按d,向左按a,向上按w,向下按s,退出输入quit')
 
 map[x][y] = "*"
 for i in map:
