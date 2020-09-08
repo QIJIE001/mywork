@@ -1,48 +1,50 @@
 print('****************************************************')
-print('******************»¶Ó­À´µ½Ó¢ĞÛÎŞµĞ*********************')
+print('******************æ¬¢è¿æ¥åˆ°è‹±é›„æ— æ•Œ*********************')
 print('****************************************************')
 
 xuezhi=100
 gongjili=10
 fangyuli=50
 
-map=['#','#','#','#','#','#','#']
+map=[['#','#','#'],['#','#','#'],['#','#','#']]
 i=0
+j=0
+x = 0               #å®šä¹‰x è½´ yè½´åæ ‡
+y = 0
 
-name=input('´óÀĞ£¬¸øÄãµÄÓÎÏ·Æğ¸öÏìÁÁµÄÓÎÏ·ID£º')
+name=input('å¤§ä½¬ï¼Œç»™ä½ çš„æ¸¸æˆèµ·ä¸ªå“äº®çš„æ¸¸æˆIDï¼š')
 if not name:
-    name='Íæ¼ÒÒ»'
-print('ÓÎÏ·idÉèÖÃ³É¹¦')
+    name='ç©å®¶ä¸€'
+print('æ¸¸æˆidè®¾ç½®æˆåŠŸ')
 shuxin=[name,xuezhi,gongjili,fangyuli]
-print('»¶Ó­Íæ¼Ò£º',name,'¡£ÄãµÄÑªÖµÎª£º',xuezhi,',¹¥»÷Á¦Îª£º',gongjili,',·ÀÓùÁ¦Îª£º',fangyuli)
+print('æ¬¢è¿ç©å®¶ï¼š',name,'ã€‚ä½ çš„è¡€å€¼ä¸ºï¼š',xuezhi,',æ”»å‡»åŠ›ä¸ºï¼š',gongjili,',é˜²å¾¡åŠ›ä¸ºï¼š',fangyuli)
 
 
-print('ÓÎÏ·ÏòÓÒÇë°´d,Ïò×ó°´a,ÏòÉÏ°´w,ÏòÏÂ°´s,ÍË³öÊäÈëquit')
-while 1:
-    map[i]='*'
-    print("".join(map))
-    userinput=input('Ñ¡Ôñ·½Ïò£º')
+print('æ¸¸æˆå‘å³è¯·æŒ‰d,å‘å·¦æŒ‰a,å‘ä¸ŠæŒ‰w,å‘ä¸‹æŒ‰s,é€€å‡ºè¾“å…¥quit')
 
-    if userinput=='d' and i < 6:
-        map[i]='#'
-        i+=1
-    elif userinput=='a' and i > 0:
-        map[i] = '#'
-        i -= 1
-    elif userinput=='quit':
-        print('ÍË³öÓÎÏ·')
-        break
-    else:
-        print('')
+map[x][y] = "*"
+for i in map:
+    for j in i:
+        print(j, end=" ")
+    print()
+while True:
+    userinput = input("é€‰æ‹©æ–¹å‘ï¼š")
+    if userinput=="d" and y<3:         # å³
+        y+=1
+    elif userinput=="a" and y>0:       # å·¦
+        y-=1
+    elif userinput=="s" and x<3:       # ä¸‹
+        x+=1
+    elif userinput == "w" and x > 0:   # ä¸Š
+        x -= 1
+        
+    map = [['#','#','#'],['#','#','#'],['#','#','#']]
+    map[x][y] = "*"
+    for i in map:
+        for j in i:
+            print(j,end=" ")
+        print()
 
+    
 
-
-
-
-
-
-
-
-
-
-
+    
