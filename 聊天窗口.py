@@ -29,13 +29,22 @@ class qijie(wx.App):
             style=wx.TE_MULTILINE)
 
         self.bt_Sent = wx.Button(panel, -1, "发送",
-            size=(75, 25), pos=(175, 370))
+            size=(75, 25), pos=(130, 370))
         self.Bind(wx.EVT_BUTTON,
             self.OnButtonSent, self.bt_Sent)
+        
         self.bt_Clear = wx.Button(panel, -1, "清除",
-            size=(75, 25), pos=(260, 370))
+            size=(75, 25), pos=(230, 370)) 
+         
         self.Bind(wx.EVT_BUTTON,
             self.OnButtonClear, self.bt_Clear)
+        
+        self.bt_Quit = wx.Button(panel, -1, "退出",
+            size=(75, 25), pos=(330, 370))
+         
+        self.Bind(wx.EVT_BUTTON,
+            self.OnExit, self.bt_Quit)
+         
 
         frame.Show()
         return True
@@ -49,6 +58,11 @@ class qijie(wx.App):
 
     def OnButtonClear(self, event):
         self.text_all.Clear()
+
+   
+    
+    def OnExit(self,event):
+        self.text_all.Close(True)  
 
 
 if __name__ == "__main__":
